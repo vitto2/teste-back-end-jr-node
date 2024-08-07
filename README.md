@@ -1,6 +1,6 @@
-# Descrição do Teste
+# Teste Back End Júnior - PHP
 
-Crie uma aplicação PHP que gerencie um sistema de consultas médicas. A aplicação deve permitir criar, ler, atualizar e deletar registros de beneficiários, médicos, hospitais e consultas.
+Crie uma aplicação PHP que gerencie um sistema de consultas médicas. A aplicação deve permitir criar, ler, atualizar e deletar registros de beneficiários, médicos, hospitais e consultas, deve ser criado um fork desse repositório para efetuar o teste.
 
 ## Entidades
 
