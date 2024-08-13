@@ -26,7 +26,6 @@ CRUD para Beneficiário, Médico, Hospital, Consulta:
 
 - **Beneficiário Data nascimento**: Não deverá ser permitido cadastrar beneficiários com idade menor que 18 anos.
 - **Associação de Médico ao Hospital**: Cada médico deve estar associado a um hospital. A aplicação deve garantir que, ao criar ou atualizar um médico, ele seja relacionado a um hospital existente.
-- **Anexo Consulta**: A coluna anexo deve permitir o envio de arquivos de imagem ou PDF.
 - **Status Consulta**: Após concluída a consulta, ela não poderá ser alterada/excluída.
 
 ## Requisitos obrigatórios
