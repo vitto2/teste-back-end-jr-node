@@ -1,6 +1,7 @@
 # Descrição do Teste
 
 Crie uma aplicação PHP que gerencie um sistema de consultas médicas. A aplicação deve permitir criar, ler, atualizar e deletar registros de beneficiários, médicos, hospitais e consultas.
+Este teste é focado exclusivamente na implementação do backend da aplicação, portanto, não é necessário criar interfaces gráficas ou telas.
 
 ## Entidades
 
