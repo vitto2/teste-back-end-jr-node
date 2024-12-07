@@ -1,4 +1,3 @@
-Aqui está o conteúdo formatado para o arquivo **README.md** do seu projeto:
 
 ```markdown
 # Sistema de Gerenciamento de Consultas Médicas
