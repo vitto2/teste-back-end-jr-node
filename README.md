@@ -1,6 +1,3 @@
-Claro! Aqui está o texto no formato desejado, com a estrutura semelhante à seção a partir de "instale as dependências":
-
----
 
 # Sistema de Gerenciamento de Consultas Médicas
 
