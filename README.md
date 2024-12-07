@@ -1,62 +1,52 @@
+Claro! Aqui está o texto no formato desejado, com a estrutura semelhante à seção a partir de "instale as dependências":
 
-```markdown
+---
+
 # Sistema de Gerenciamento de Consultas Médicas
 
-Este projeto é uma aplicação backend desenvolvida em **Node.js**, que gerencia um sistema de consultas médicas. Ele permite realizar operações de **criação**, **listagem**, **atualização** e **deleção** (CRUD) para as entidades de **Beneficiários**, **Médicos**, **Hospitais** e **Consultas**.
+Este projeto é uma aplicação backend desenvolvida em Node.js, que gerencia um sistema de consultas médicas. Ele permite realizar operações de criação, listagem, atualização e deleção (CRUD) para as entidades de Beneficiários, Médicos, Hospitais e Consultas.
 
----
+## Tecnologias Utilizadas
 
-## 🚀 Tecnologias Utilizadas
-- **Node.js**: Plataforma de desenvolvimento backend.
-- **Express.js**: Framework para criação de APIs RESTful.
-- **Sequelize ORM**: Para manipulação do banco de dados MySQL.
-- **MySQL**: Banco de dados relacional.
-- **Express-Validator**: Biblioteca para validação de dados.
-- **dotenv**: Para gerenciamento de variáveis de ambiente.
+- Node.js: Plataforma de desenvolvimento backend.
+- Express.js: Framework para criação de APIs RESTful.
+- Sequelize ORM: Para manipulação do banco de dados MySQL.
+- MySQL: Banco de dados relacional.
+- Express-Validator: Biblioteca para validação de dados.
+- dotenv: Para gerenciamento de variáveis de ambiente.
 
----
+## Funcionalidades
 
-## 📚 Funcionalidades
+CRUD para as entidades:
+- Beneficiário: Campos `id`, `nome`, `email`, `data_nascimento`.
+- Médico: Campos `id`, `nome`, `especialidade`, `hospital`.
+- Hospital: Campos `id`, `nome`, `endereco`.
+- Consulta: Campos `id`, `data`, `status`, `beneficiario`, `medico`, `hospital`.
 
-### CRUD para as Entidades:
-1. **Beneficiário**  
-   - Campos: `id`, `nome`, `email`, `data_nascimento`
-2. **Médico**  
-   - Campos: `id`, `nome`, `especialidade`, `hospital`
-3. **Hospital**  
-   - Campos: `id`, `nome`, `endereco`
-4. **Consulta**  
-   - Campos: `id`, `data`, `status`, `beneficiario`, `medico`, `hospital`
+Regras de Negócio:
+1. Beneficiário: Não é permitido cadastrar beneficiários menores de 18 anos.
+2. Médico: Cada médico deve estar associado a um hospital existente.
+3. Consulta: Consultas concluídas não podem ser alteradas ou excluídas.
 
-### Regras de Negócio:
-1. **Beneficiário**: Não é permitido cadastrar beneficiários menores de 18 anos.
-2. **Médico**: Cada médico deve estar associado a um hospital existente.
-3. **Consulta**: Consultas concluídas não podem ser alteradas ou excluídas.
+## Como Configurar o Projeto
 
----
+### Pré-requisitos
+1. Instale o Node.js na versão 16 ou superior.
+2. Instale o MySQL e configure um banco de dados funcional.
+3. Certifique-se de que o Git esteja instalado.
 
-## ⚙️ Como Configurar o Projeto
+### Passo a Passo
 
-### Pré-requisitos:
-1. Node.js (v16 ou superior)
-2. MySQL (com um banco de dados configurado)
-3. Git
+1. Clone o repositório:  
+   `git clone https://github.com/seu-usuario/sistema-consultas.git`  
+   Navegue para a pasta do projeto:  
+   `cd sistema-consultas`.
 
-### Passo a Passo:
-1. **Clone o repositório**:
-   ```bash
-   git clone https://github.com/seu-usuario/sistema-consultas.git
-   cd sistema-consultas
+2. Instale as dependências do projeto:  
+   `npm install`.
+
+3. Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:  
    ```
-
-2. **Instale as dependências**:
-   ```bash
-   npm install
-   ```
-
-3. **Configure o arquivo `.env`**:
-   Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
-   ```plaintext
    DB_NAME=sistema_consultas
    DB_USER=seu_usuario
    DB_PASSWORD=sua_senha
@@ -64,57 +54,46 @@ Este projeto é uma aplicação backend desenvolvida em **Node.js**, que gerenci
    PORT=3000
    ```
 
-4. **Configure o banco de dados**:
-   Certifique-se de que o banco de dados MySQL esteja rodando e crie o banco especificado em `DB_NAME`.
+4. Configure o banco de dados MySQL com o nome especificado na variável `DB_NAME`. Certifique-se de que o servidor MySQL está em execução.
 
-5. **Inicie o servidor**:
-   Em ambiente de desenvolvimento, utilize o seguinte comando:
-   ```bash
-   npm run dev
-   ```
-   Para produção:
-   ```bash
-   npm start
-   ```
+5. Inicie o servidor:  
+   Em ambiente de desenvolvimento:  
+   `npm run dev`.  
+   Em ambiente de produção:  
+   `npm start`.
 
----
+## Endpoints da API
 
-## 🛠️ Endpoints da API
+### Beneficiário
+- POST `/beneficiarios`: Cria um novo beneficiário.
+- GET `/beneficiarios`: Lista todos os beneficiários.
+- PUT `/beneficiarios/:id`: Atualiza um beneficiário existente.
+- DELETE `/beneficiarios/:id`: Deleta um beneficiário.
 
-### **Beneficiário**
-- **POST** `/beneficiarios`: Cria um novo beneficiário.
-- **GET** `/beneficiarios`: Lista todos os beneficiários.
-- **PUT** `/beneficiarios/:id`: Atualiza um beneficiário existente.
-- **DELETE** `/beneficiarios/:id`: Deleta um beneficiário.
+### Médico
+- POST `/medicos`: Cria um novo médico.
+- GET `/medicos`: Lista todos os médicos.
+- PUT `/medicos/:id`: Atualiza um médico existente.
+- DELETE `/medicos/:id`: Deleta um médico.
 
-### **Médico**
-- **POST** `/medicos`: Cria um novo médico.
-- **GET** `/medicos`: Lista todos os médicos.
-- **PUT** `/medicos/:id`: Atualiza um médico existente.
-- **DELETE** `/medicos/:id`: Deleta um médico.
+### Hospital
+- POST `/hospitais`: Cria um novo hospital.
+- GET `/hospitais`: Lista todos os hospitais.
+- PUT `/hospitais/:id`: Atualiza um hospital existente.
+- DELETE `/hospitais/:id`: Deleta um hospital.
 
-### **Hospital**
-- **POST** `/hospitais`: Cria um novo hospital.
-- **GET** `/hospitais`: Lista todos os hospitais.
-- **PUT** `/hospitais/:id`: Atualiza um hospital existente.
-- **DELETE** `/hospitais/:id`: Deleta um hospital.
+### Consulta
+- POST `/consultas`: Cria uma nova consulta.
+- GET `/consultas`: Lista todas as consultas.
+- PUT `/consultas/:id`: Atualiza uma consulta (exceto se estiver concluída).
+- DELETE `/consultas/:id`: Deleta uma consulta (exceto se estiver concluída).
 
-### **Consulta**
-- **POST** `/consultas`: Cria uma nova consulta.
-- **GET** `/consultas`: Lista todas as consultas.
-- **PUT** `/consultas/:id`: Atualiza uma consulta (exceto se estiver concluída).
-- **DELETE** `/consultas/:id`: Deleta uma consulta (exceto se estiver concluída).
+## Testando a API
 
----
+Use ferramentas como Postman ou Insomnia para enviar requisições aos endpoints listados. Certifique-se de usar o formato JSON para os dados enviados no corpo das requisições.
 
-## 🧪 Testando a API
-
-### Usando o Postman ou Insomnia
-1. Faça requisições aos endpoints listados na seção **Endpoints da API**.
-2. Utilize o formato JSON para os dados enviados no corpo das requisições.
-
-Exemplo de requisição **POST** para criar um beneficiário:
-```json
+Exemplo de requisição POST para criar um beneficiário:
+```
 POST /beneficiarios
 {
   "nome": "João Silva",
@@ -123,44 +102,34 @@ POST /beneficiarios
 }
 ```
 
----
+## Estrutura do Projeto
 
-## 🗃️ Estrutura do Projeto
+O projeto segue a estrutura abaixo:
 
-```plaintext
+```
 sistema-consultas/
 ├── src/
-│   ├── config/        # Configurações (banco de dados, ambiente)
-│   ├── controllers/   # Lógica das rotas
-│   ├── models/        # Definições das tabelas (ORM)
-│   ├── routes/        # Rotas para cada entidade
-│   └── validators/    # Regras de validação
-├── .env               # Variáveis de ambiente
-├── index.js           # Entrada principal do servidor
+│   ├── config/        Configurações (banco de dados, ambiente)
+│   ├── controllers/   Lógica das rotas
+│   ├── models/        Definições das tabelas (ORM)
+│   ├── routes/        Rotas para cada entidade
+│   └── validators/    Regras de validação
+├── .env               Variáveis de ambiente
+├── index.js           Entrada principal do servidor
 └── package.json
 ```
 
----
+## Contribuindo
 
-## 👥 Contribuindo
-1. Faça um fork do projeto.
-2. Crie uma branch para sua feature:
-   ```bash
-   git checkout -b minha-feature
-   ```
-3. Commit suas alterações:
-   ```bash
-   git commit -m "Adiciona minha nova feature"
-   ```
-4. Envie sua branch:
-   ```bash
-   git push origin minha-feature
-   ```
-5. Abra um Pull Request.
+1. Faça um fork do projeto.  
+2. Crie uma branch para sua feature:  
+   `git checkout -b minha-feature`.  
+3. Commit suas alterações:  
+   `git commit -m "Adiciona minha nova feature"`.  
+4. Envie sua branch:  
+   `git push origin minha-feature`.  
+5. Abra um Pull Request para revisão.
 
----
+## Licença
 
-## 📄 Licença
 Este projeto está sob a licença MIT. Sinta-se à vontade para utilizá-lo e modificá-lo.
-
-Basta copiar e colar no arquivo `README.md` do seu repositório. 🚀
