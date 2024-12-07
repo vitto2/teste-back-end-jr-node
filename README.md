@@ -1,103 +1,167 @@
-# Descrição do Teste
+Aqui está o conteúdo formatado para o arquivo **README.md** do seu projeto:
 
-Crie uma aplicação PHP que gerencie um sistema de consultas médicas. A aplicação deve permitir criar, ler, atualizar e deletar registros de beneficiários, médicos, hospitais e consultas.
-Este teste é focado exclusivamente na implementação do backend da aplicação, portanto, não é necessário criar interfaces gráficas ou telas.
+```markdown
+# Sistema de Gerenciamento de Consultas Médicas
 
-## Entidades
-
-- **Beneficiário**: id, nome, email, data_nascimento
-- **Médico**: id, nome, especialidade, hospital
-- **Hospital**: id, nome, endereco
-- **Consulta**: id, data, status, beneficiario, medico, hospital
-
-## Requisitos
-
-CRUD para Beneficiário, Médico, Hospital, Consulta:
-
-- **Criação**
-  - Método: POST
-- **Listagem**
-  - Método: GET
-- **Atualizar**
-  - Método: PUT
-- **Deletar**
-  - Método: DELETE
-
-## Regras
-
-- **Beneficiário Data nascimento**: Não deverá ser permitido cadastrar beneficiários com idade menor que 18 anos.
-- **Associação de Médico ao Hospital**: Cada médico deve estar associado a um hospital. A aplicação deve garantir que, ao criar ou atualizar um médico, ele seja relacionado a um hospital existente.
-- **Status Consulta**: Após concluída a consulta, ela não poderá ser alterada/excluída.
-
-## Requisitos obrigatórios
-
-- Criar a aplicação no padrão MVC;
-- Utilizar `symfony/routing` para as rotas;
-- Utilizar Doctrine ORM;
-- Banco de dados MySQL;
-
-## Instruções para entrega
-
-- Seu código deve estar disponível no GitHub para acesso público.
-- Crie um arquivo `README.md` detalhando como configurar, executar e testar a aplicação.
-- Faça um fork deste repositório para iniciar o desenvolvimento.
+Este projeto é uma aplicação backend desenvolvida em **Node.js**, que gerencia um sistema de consultas médicas. Ele permite realizar operações de **criação**, **listagem**, **atualização** e **deleção** (CRUD) para as entidades de **Beneficiários**, **Médicos**, **Hospitais** e **Consultas**.
 
 ---
 
-# Responsabilidades da Vaga
-
-## Desenvolvimento de Aplicações Web
-
-- Criar e manter aplicações web utilizando o framework Symfony, seguindo o padrão MVC.
-- Implementar funcionalidades de CRUD para diferentes entidades do sistema.
-
-## Gerenciamento de Banco de Dados
-
-- Utilizar Doctrine ORM para manipulação e gerenciamento do banco de dados.
-- Criar e manter estruturas de banco de dados no MySQL.
-
-## Implementação de Rotas
-
-- Configurar e gerenciar rotas utilizando o componente `symfony/routing`.
-
-## Validação e Regras de Negócio
-
-- Implementar regras de validação e lógica de negócios.
-
-## Documentação e Testes
-
-- Criar documentação detalhada para configuração, execução e testes da aplicação.
-- Garantir que o código seja bem documentado e testado antes de ser submetido.
+## 🚀 Tecnologias Utilizadas
+- **Node.js**: Plataforma de desenvolvimento backend.
+- **Express.js**: Framework para criação de APIs RESTful.
+- **Sequelize ORM**: Para manipulação do banco de dados MySQL.
+- **MySQL**: Banco de dados relacional.
+- **Express-Validator**: Biblioteca para validação de dados.
+- **dotenv**: Para gerenciamento de variáveis de ambiente.
 
 ---
 
-# Requisitos Desejados da Vaga
+## 📚 Funcionalidades
 
-## Habilidades Técnicas
+### CRUD para as Entidades:
+1. **Beneficiário**  
+   - Campos: `id`, `nome`, `email`, `data_nascimento`
+2. **Médico**  
+   - Campos: `id`, `nome`, `especialidade`, `hospital`
+3. **Hospital**  
+   - Campos: `id`, `nome`, `endereco`
+4. **Consulta**  
+   - Campos: `id`, `data`, `status`, `beneficiario`, `medico`, `hospital`
 
-- Experiência com desenvolvimento web utilizando PHP e Symfony.
-- Conhecimento em arquitetura MVC e padrões de desenvolvimento de software.
-- Familiaridade com Doctrine ORM e manipulação de bancos de dados relacionais, especificamente MySQL.
-- Conhecimento em configuração e gerenciamento de rotas com `symfony/routing`.
-- Experiência em manipulação e upload de arquivos, incluindo validação e tratamento de tipos de arquivo.
+### Regras de Negócio:
+1. **Beneficiário**: Não é permitido cadastrar beneficiários menores de 18 anos.
+2. **Médico**: Cada médico deve estar associado a um hospital existente.
+3. **Consulta**: Consultas concluídas não podem ser alteradas ou excluídas.
 
-## Regras de Negócio e Validação
+---
 
-- Capacidade de implementar regras de negócios e validações complexas.
-- Experiência com validação de dados de entrada e lógica de aplicação.
+## ⚙️ Como Configurar o Projeto
 
-## Controle de Versão e Colaboração
+### Pré-requisitos:
+1. Node.js (v16 ou superior)
+2. MySQL (com um banco de dados configurado)
+3. Git
 
-- Experiência com sistemas de controle de versão, preferencialmente Git.
-- Capacidade de trabalhar de forma colaborativa e comunicativa dentro de um ambiente de equipe.
+### Passo a Passo:
+1. **Clone o repositório**:
+   ```bash
+   git clone https://github.com/seu-usuario/sistema-consultas.git
+   cd sistema-consultas
+   ```
 
-## Documentação e Boas Práticas
+2. **Instale as dependências**:
+   ```bash
+   npm install
+   ```
 
-- Habilidade em criar documentação clara e detalhada.
-- Adesão a boas práticas de codificação, incluindo comentários no código e escrita de testes.
+3. **Configure o arquivo `.env`**:
+   Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
+   ```plaintext
+   DB_NAME=sistema_consultas
+   DB_USER=seu_usuario
+   DB_PASSWORD=sua_senha
+   DB_HOST=localhost
+   PORT=3000
+   ```
 
-## Outros Requisitos
+4. **Configure o banco de dados**:
+   Certifique-se de que o banco de dados MySQL esteja rodando e crie o banco especificado em `DB_NAME`.
 
-- Capacidade de resolver problemas de forma eficaz e eficiente.
-- Boa comunicação escrita e verbal.
-- Proatividade e vontade de aprender novas tecnologias e métodos de trabalho.
+5. **Inicie o servidor**:
+   Em ambiente de desenvolvimento, utilize o seguinte comando:
+   ```bash
+   npm run dev
+   ```
+   Para produção:
+   ```bash
+   npm start
+   ```
+
+---
+
+## 🛠️ Endpoints da API
+
+### **Beneficiário**
+- **POST** `/beneficiarios`: Cria um novo beneficiário.
+- **GET** `/beneficiarios`: Lista todos os beneficiários.
+- **PUT** `/beneficiarios/:id`: Atualiza um beneficiário existente.
+- **DELETE** `/beneficiarios/:id`: Deleta um beneficiário.
+
+### **Médico**
+- **POST** `/medicos`: Cria um novo médico.
+- **GET** `/medicos`: Lista todos os médicos.
+- **PUT** `/medicos/:id`: Atualiza um médico existente.
+- **DELETE** `/medicos/:id`: Deleta um médico.
+
+### **Hospital**
+- **POST** `/hospitais`: Cria um novo hospital.
+- **GET** `/hospitais`: Lista todos os hospitais.
+- **PUT** `/hospitais/:id`: Atualiza um hospital existente.
+- **DELETE** `/hospitais/:id`: Deleta um hospital.
+
+### **Consulta**
+- **POST** `/consultas`: Cria uma nova consulta.
+- **GET** `/consultas`: Lista todas as consultas.
+- **PUT** `/consultas/:id`: Atualiza uma consulta (exceto se estiver concluída).
+- **DELETE** `/consultas/:id`: Deleta uma consulta (exceto se estiver concluída).
+
+---
+
+## 🧪 Testando a API
+
+### Usando o Postman ou Insomnia
+1. Faça requisições aos endpoints listados na seção **Endpoints da API**.
+2. Utilize o formato JSON para os dados enviados no corpo das requisições.
+
+Exemplo de requisição **POST** para criar um beneficiário:
+```json
+POST /beneficiarios
+{
+  "nome": "João Silva",
+  "email": "joao@email.com",
+  "data_nascimento": "1990-01-01"
+}
+```
+
+---
+
+## 🗃️ Estrutura do Projeto
+
+```plaintext
+sistema-consultas/
+├── src/
+│   ├── config/        # Configurações (banco de dados, ambiente)
+│   ├── controllers/   # Lógica das rotas
+│   ├── models/        # Definições das tabelas (ORM)
+│   ├── routes/        # Rotas para cada entidade
+│   └── validators/    # Regras de validação
+├── .env               # Variáveis de ambiente
+├── index.js           # Entrada principal do servidor
+└── package.json
+```
+
+---
+
+## 👥 Contribuindo
+1. Faça um fork do projeto.
+2. Crie uma branch para sua feature:
+   ```bash
+   git checkout -b minha-feature
+   ```
+3. Commit suas alterações:
+   ```bash
+   git commit -m "Adiciona minha nova feature"
+   ```
+4. Envie sua branch:
+   ```bash
+   git push origin minha-feature
+   ```
+5. Abra um Pull Request.
+
+---
+
+## 📄 Licença
+Este projeto está sob a licença MIT. Sinta-se à vontade para utilizá-lo e modificá-lo.
+
+Basta copiar e colar no arquivo `README.md` do seu repositório. 🚀
